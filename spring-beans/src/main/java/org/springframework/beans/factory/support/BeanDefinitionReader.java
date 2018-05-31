@@ -36,6 +36,7 @@ import org.springframework.core.io.ResourceLoader;
  * @since 1.1
  * @see org.springframework.core.io.Resource
  */
+//主要定义资源文件读取并转换为BeanDefinition的各个功能
 public interface BeanDefinitionReader {
 
 	/**

@@ -129,6 +129,7 @@ public class EncodedResource {
 	 * @see #requiresReader()
 	 * @see #getInputStream()
 	 */
+	//处理编码属性
 	public Reader getReader() throws IOException {
 		if (this.charset != null) {
 			return new InputStreamReader(this.resource.getInputStream(), this.charset);

@@ -43,6 +43,7 @@ import java.net.URL;
  * @see ByteArrayResource
  * @see InputStreamResource
  */
+//资源属性接口
 public interface Resource extends InputStreamSource {
 
 	/**
