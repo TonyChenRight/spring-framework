@@ -53,6 +53,7 @@ import org.springframework.beans.BeansException;
  * @see HierarchicalBeanFactory
  * @see BeanFactoryUtils
  */
+//根据各种条件获取bean的配置清单
 public interface ListableBeanFactory extends BeanFactory {
 
 	/**
