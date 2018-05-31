@@ -695,11 +695,14 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
 				this.beanDefinitionNames.add(beanName);
 				this.frozenBeanDefinitionNames = null;
 			}
+			//注册beanDefinition
+			//加入map缓存
 			this.beanDefinitionMap.put(beanName, beanDefinition);
 		}
 
 		if (oldBeanDefinition != null || containsSingleton(beanName)) {
 			//重置所有beanName对应的缓存
+			//清除解析之前留下的对应beanName的缓存
 			resetBeanDefinition(beanName);
 		}
 	}

@@ -912,7 +912,8 @@ public class BeanDefinitionParserDelegate {
 							error("Ambiguous constructor-arg entries for index " + index, ele);
 						}
 						else {
-							//将type\name\index属性一并封装在ConstructorArgumentValues.ValueHolder
+							//将type\name\index属性一并封装在ConstructorArgumentValues.ValueHolder类型中
+							//并添加至当前BeanDefinition的 constructorArgumentsValues的 indexedArgumentValues属性中
 							bd.getConstructorArgumentValues().addIndexedArgumentValue(index, valueHolder);
 						}
 					}
