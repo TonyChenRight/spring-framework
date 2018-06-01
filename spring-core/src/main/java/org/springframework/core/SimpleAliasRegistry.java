@@ -50,6 +50,7 @@ public class SimpleAliasRegistry implements AliasRegistry {
 			this.aliasMap.remove(alias);
 		}
 		else {
+			//如果alias不允许覆盖则抛出异常
 			if (!allowAliasOverriding()) {
 				String registeredName = this.aliasMap.get(alias);
 				if (registeredName != null && !registeredName.equals(name)) {
@@ -57,6 +58,7 @@ public class SimpleAliasRegistry implements AliasRegistry {
 							name + "': It is already registered for name '" + registeredName + "'.");
 				}
 			}
+			//当A -> B存在时，若再次出现A -> C -> B	时候则会抛出异常
 			checkForAliasCircle(name, alias);
 			this.aliasMap.put(alias, name);
 		}
