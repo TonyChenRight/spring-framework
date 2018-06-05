@@ -178,6 +178,7 @@ public abstract class AbstractBeanDefinitionReader implements EnvironmentCapable
 	}
 
 	public int loadBeanDefinitions(String location) throws BeanDefinitionStoreException {
+		
 		return loadBeanDefinitions(location, null);
 	}
 
@@ -226,6 +227,7 @@ public abstract class AbstractBeanDefinitionReader implements EnvironmentCapable
 		else {
 			// Can only load single resources by absolute URL.
 			Resource resource = resourceLoader.getResource(location);
+			//使用 子类XmlBeanDefinitionReader 重写的方法,进入到和 new XmlBeanFactory(new ClassPathResource())一样的执行路径
 			int loadCount = loadBeanDefinitions(resource);
 			if (actualResources != null) {
 				actualResources.add(resource);

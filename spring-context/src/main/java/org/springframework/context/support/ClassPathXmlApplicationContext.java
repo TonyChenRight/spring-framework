@@ -48,6 +48,7 @@ import org.springframework.util.Assert;
  * @see #getResourceByPath
  * @see GenericApplicationContext
  */
+//spring环境加载主类
 public class ClassPathXmlApplicationContext extends AbstractXmlApplicationContext {
 
 	private Resource[] configResources;
@@ -80,6 +81,7 @@ public class ClassPathXmlApplicationContext extends AbstractXmlApplicationContex
 	 * @throws BeansException if context creation failed
 	 */
 	public ClassPathXmlApplicationContext(String configLocation) throws BeansException {
+		//传入 META-INF/application.xml
 		this(new String[] {configLocation}, true, null);
 	}
 
@@ -132,10 +134,12 @@ public class ClassPathXmlApplicationContext extends AbstractXmlApplicationContex
 	 */
 	public ClassPathXmlApplicationContext(String[] configLocations, boolean refresh, ApplicationContext parent)
 			throws BeansException {
-
+		
 		super(parent);
+		//添加配置文件地址  META-INF/application.xml
 		setConfigLocations(configLocations);
 		if (refresh) {
+			//刷新初始化
 			refresh();
 		}
 	}
